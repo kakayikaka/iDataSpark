@@ -12,4 +12,7 @@ public interface SqlSession {
 
     // 根据条件查询单个
     <T> T selectOne(String statementId, Object... params) throws SQLException, IntrospectionException, NoSuchFieldException, ClassNotFoundException, InvocationTargetException, IllegalAccessException, InstantiationException;
+
+    // 生成 DAO 接口的代理对象
+    <T> T getMapper(Class<?> mapperClass);
 }
